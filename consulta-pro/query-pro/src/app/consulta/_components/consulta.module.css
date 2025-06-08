@@ -1,0 +1,149 @@
+.container {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+  background-image: url("/fundo_login.jpg");
+  background-size: cover;
+  background-position: center;
+  z-index: 0;
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+}
+
+.container::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(to bottom, #009fe3, #212c54);
+  opacity: 0.85;
+}
+
+.content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+  height: calc(100vh - 60px); /* Subtract navbar height */
+}
+
+.main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  padding: 1rem;
+  min-width: 0; /* ESSENCIAL para evitar overflow horizontal */
+}
+
+.tableWrapper {
+  flex: 1;
+  overflow-y: auto;
+  background-color: white;
+  border-radius: 16px;
+  margin-bottom: 1rem;
+  max-width: 100%; /* Limita a largura */
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  padding: 1.5rem;
+}
+
+.cardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.cardHeader h2 {
+  font-size: 1rem;
+  font-weight: bold;
+  margin: 0;
+}
+
+.voltarLink {
+  font-size: 0.8rem;
+  color: gray;
+  text-decoration: none;
+}
+
+.table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+.table th,
+.table td {
+  padding: 0.75rem 1rem;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.table th {
+  position: sticky;
+  top: 0;
+  background-color: #f0f0f0;
+  z-index: 1;
+}
+
+.table tbody tr:hover {
+  background-color: #f1f3f5;
+}
+
+.viewLink {
+  color: #333;
+  text-decoration: underline;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.downloadButtonWrapper {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 1.5rem;
+}
+
+.downloadButton {
+  background-color: #212c54;
+  color: white;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 0.85rem;
+}
+
+/* Botões similares aos da página de detalhes */
+.btn_1 {
+  background-color: #212c54;
+  color: white;
+  border: 1px solid #212c54;
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  text-decoration: none;
+}
+
+.btn_1:hover {
+  background-color: #223063;
+  color: #ffffff;
+}
+
+.btn_2 {
+  background-color: #95c122;
+  color: #223063;
+  border: 1px solid #95c122;
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  text-decoration: none;
+}
+
+.btn_2:hover {
+  background-color: #9fcf24;
+  color: #ffffff;
+}

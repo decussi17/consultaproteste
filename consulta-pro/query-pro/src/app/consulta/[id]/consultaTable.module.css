@@ -1,0 +1,141 @@
+.container {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+  background-image: url("/fundo_login.jpg");
+  background-size: cover;
+  background-position: center;
+  z-index: 0;
+  display: flex;
+  flex-direction: column;
+  width: 100vw; /* Garante que não vai ultrapassar */
+}
+
+.container::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(to bottom, #009fe3, #212c54);
+  opacity: 0.85; /* Slightly transparent overlay */
+}
+
+.content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+  height: calc(100vh - 60px); /* Subtract navbar height */
+}
+
+.main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  padding: 1rem;
+  min-width: 0; /* ESSENCIAL para evitar overflow horizontal */
+}
+
+.tableWrapper {
+  flex: 1;
+  overflow-y: auto;
+  background-color: white;
+  border-radius: 16px;
+  margin-bottom: 1rem;
+  max-width: 100%; /* Limita a largura */
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+.table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+.table th,
+.table td {
+  padding: 1rem;
+  text-align: left;
+}
+
+.table th {
+  position: sticky;
+  top: 0;
+  background-color: #e9ecef;
+  z-index: 1;
+  border-bottom: 1px solid #dee2e6;
+}
+
+.table tbody tr {
+  background-color: #f8f9fa;
+}
+
+.table tbody tr:hover {
+  background-color: #f1f3f5;
+}
+
+.nomePessoa {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  color: #fff;
+}
+
+.retorno {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.buttons {
+  display: flex;
+  gap: 1rem;
+  margin-top: auto;
+  padding: 1rem;
+  background-color: white;
+  border-radius: 16px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  justify-content: space-between;
+}
+
+.btn_1 {
+  background-color: #212c54;
+  color: white;
+  border: 1px solid #212c54;
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.btn_1:hover {
+  background-color: #223063;
+  color: #ffffff;
+}
+
+.btn_1.disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+.btn_2 {
+  background-color: #95c122;
+  color: #223063;
+  border: 1px solid #95c122;
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.btn_2:hover {
+  background-color: #9fcf24;
+  color: #ffffff;
+}

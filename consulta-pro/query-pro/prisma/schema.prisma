@@ -1,0 +1,56 @@
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model User {
+  id         Int         @id @default(autoincrement())
+  username   String      @unique
+  password   String
+  name       String?
+  role       String      @default("user")
+  email      String      @unique
+  created_at DateTime    @default(now())
+  updated_at DateTime    @updatedAt
+  consultas  Consulta[]
+  documentos Documento[] // Relacionamento direto com documentos
+}
+
+model Consulta {
+  id         Int      @id @default(autoincrement())
+  created_at DateTime @default(now())
+  updated_at DateTime @updatedAt
+  form_data  Json?
+  status     Status   @default(Pending)
+  user_id    Int
+
+  documentos Documento[] @relation("DocumentoOnConsulta")
+  user       User?       @relation(fields: [user_id], references: [id])
+}
+
+model Documento {
+  id              Int      @id @default(autoincrement())
+  consulta_id     Int
+  user_id         Int // Adicionar referência direta
+  created_at      DateTime @default(now())
+  updated_at      DateTime @updatedAt
+  document_name   String   @db.VarChar(255)
+  integration_url String   @db.VarChar(250)
+  sent_data       Json?
+  response_data   Json?
+  status          Status   @default(Pending)
+
+  consulta Consulta @relation(fields: [consulta_id], references: [id], name: "DocumentoOnConsulta")
+  user     User     @relation(fields: [user_id], references: [id])
+}
+
+enum Status {
+  Pending
+  Finished
+  Error
+  Processing
+}

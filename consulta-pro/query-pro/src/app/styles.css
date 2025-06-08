@@ -1,0 +1,70 @@
+@import url("https://fonts.googleapis.com/css2?family=Arima:wght@100..700&display=swap");
+
+.primary-color {
+  color: #ee3561;
+}
+
+.body {
+  font-family: "Arima", system-ui;
+}
+
+.primary-color:hover {
+  color: #000;
+}
+
+.custom-btn-color {
+  color: #ee3561;
+  border-color: #ee3561;
+}
+
+.custom-btn-color:hover {
+  color: white;
+  background-color: #ee3561;
+  border-color: #ee3561;
+}
+
+.form-group {
+  max-width: 100vh;
+  align-items: center;
+}
+
+.hr_consulta {
+  max-width: 100vh;
+}
+
+.navbar {
+  background-color: rgb(233, 233, 233) !important;
+}
+
+.form-container {
+  background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+  border-radius: 10px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2),
+    inset 0 0 10px rgba(255, 255, 255, 0.5);
+  border: 3px solid #dee2e6;
+  padding: 40px;
+  background-clip: padding-box;
+}
+
+.form-container:hover {
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3),
+    inset 0 0 15px rgba(255, 255, 255, 0.6);
+}
+
+label {
+  font-weight: bold;
+  color: #495057;
+}
+
+.form-control {
+  border: 1px solid #ced4da;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.vh-100 {
+  height: 100vh;
+}
+
+.spinner-border {
+  color: #007bff;
+}
